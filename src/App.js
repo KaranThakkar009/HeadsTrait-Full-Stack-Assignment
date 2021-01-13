@@ -107,7 +107,7 @@ function App() {
 
   // Write to json file
   const saveJson = (contacts) => {
-    const url = 'http://localhost:5000/write'
+    const url = '/write'
     axios.post(url,contacts)
     .then(response => {
       //console.log(response)

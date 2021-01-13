@@ -34,6 +34,10 @@ app.post('/write',async(req,res,next) => {
 });
 
 
+if(process.env.NODE_ENV=="production"){
+    app.use(express.static('/build'));
+}
+
 //404 route
 app.use((req,res,next) => res.status(404).send({
     message: 'could not find specified route...'
