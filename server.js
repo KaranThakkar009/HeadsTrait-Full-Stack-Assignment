@@ -18,7 +18,7 @@ app.get('/',(req,res) => res.status(200).send({
 
 
 const writeTextToFileAsync = async(contentToWrite) => {
-    fs.writeFile('./src/contactDetails.json',contentToWrite,(err) => {
+    fs.writeFile('./client/src/contactDetails.json',contentToWrite,(err) => {
         console.log(contentToWrite);
         if(err){
             console.log(err);
@@ -34,8 +34,8 @@ app.post('/write',async(req,res,next) => {
 });
 
 
-if(process.env.NODE_ENV==="production"){
-    app.use(express.static('/build'));
+if(process.env.NODE_ENV==='production'){
+    app.use(express.static('client/build'));
 }
 
 //404 route

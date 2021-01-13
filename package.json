@@ -1,11 +1,28 @@
 {
   "name": "contact-form",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "start": "node server.js",
+    "client": "cd client && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaranThakkar009/HeadsTrait-Full-Stack-Assignment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KaranThakkar009/HeadsTrait-Full-Stack-Assignment/issues"
+  },
+  "homepage": "https://github.com/KaranThakkar009/HeadsTrait-Full-Stack-Assignment#readme",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.3",
-    "@testing-library/user-event": "^12.6.0",
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "concurrently": "^5.3.0",
@@ -13,40 +30,6 @@
     "express": "^4.17.1",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.7",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.1",
-    "uuid": "^8.3.2",
-    "web-vitals": "^0.2.4"
-  },
-  "scripts": {
-    "start": "npm run build",
-    "serverNode": "node ./src/server.js",
-    "server": "nodemon ./src/server.js",
-    "client": "react-scripts start",
-    "dev": "concurrently \"npm run server\" \"npm run client\" ",
-    "build": "npm run server && npm run client",
-    "install-client": "npm install",
-    "heroku-postbuild": "npm run install-client && npm run build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "uuid": "^8.3.2"
   }
 }
