@@ -20,7 +20,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "npm run client",
+    "start": "npm run client && npm run server",
     "serverNode": "node ./src/server.js",
     "server": "nodemon ./src/server.js",
     "client": "react-scripts start",
