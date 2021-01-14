@@ -25,9 +25,9 @@
     "server": "nodemon ./src/server.js",
     "client": "react-scripts start",
     "dev": "concurrently \"npm run server\" \"npm run client\" ",
-    "build": "npm run server && npm run client",
+    "build": "npm run client",
     "install-client": "npm install",
-    "heroku-postbuild": "npm run install-client && npm run build",
+    "heroku-postbuild": "npm run install-client",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
