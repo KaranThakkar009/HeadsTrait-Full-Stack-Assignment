@@ -11,6 +11,7 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(cors());
 
+
 //default route
 app.get('/',(req,res) => res.status(200).send({
     message: 'server is running...'
@@ -34,9 +35,13 @@ app.post('/write',async(req,res,next) => {
 });
 
 
-if(process.env.NODE_ENV==='production'){
-    app.use(express.static('client/build'));
-}
+if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
+    app.use(express.static(path.join(__dirname, 'client/build')));
+
+    app.get('*', function (req, res) {
+        res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    });
+};
 
 //404 route
 app.use((req,res,next) => res.status(404).send({
