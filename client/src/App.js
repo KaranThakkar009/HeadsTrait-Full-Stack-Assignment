@@ -37,9 +37,13 @@ function App() {
   // Add contact
   const addContact = () => {
     if (firstName && lastName && phoneNo) {
+      var reverseFirstName = firstName.split('')
+      var posFirstName = firstName[2]
+      console.log(posFirstName);
+      console.log(reverseFirstName);
       // create new contact object
       let newContact = {
-        "id": uuidv1(),
+        "id": Math.random().toString(),
         "firstName": firstName,
         "lastName": lastName,
         "phoneNo": phoneNo
@@ -123,7 +127,9 @@ function App() {
       <div>
         <h4>Add new contact</h4>
         <input
+
           placeholder="Enter First Name"
+          
           onChange={e => setFirstName(e.target.value)} value={firstName || ''}
           ref={firstNameRef}>
         </input>
@@ -136,6 +142,7 @@ function App() {
         <br />
         <input
           placeholder="Enter phone number"
+
           onChange={e => setPhoneNo(e.target.value)} value={phoneNo || ''}
           ref={phoneNoRef}>
         </input>
